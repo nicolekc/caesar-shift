@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 
 const code = "That's how you do it on Survivor!";
 
-function shiftLetter(letter, shift = 0) {
+function shiftLetter(letter: string, shift: number = 0) {
   if (letter.match(/([^A-Za-z])/)) {
     return letter;
   }
@@ -18,8 +18,9 @@ function shiftLetter(letter, shift = 0) {
   );
 }
 
-function shiftSentence(sentence, shift = 0, isReversed = false) {
-  return [...sentence]
+function shiftSentence(sentence: string, shift = 0, isReversed = false) {
+  return sentence
+    .split("")
     .map((char, idx, arr) => (isReversed ? arr[arr.length - idx - 1] : char))
     .map((letter) => shiftLetter(letter, shift))
     .join("");
@@ -33,19 +34,30 @@ function Letter({ letter }: { letter: string }) {
   );
 }
 
-function LetterRow({ str, className }: { str: string; className: string }) {
+function LetterRow({ str, className }: { str: string; className?: string }) {
   return (
     <div
       className={`mb-2 flex flex-row w-fit bg-gray-200 gap-0.5 p-0.5 h-min ${className}`}
     >
-      {[...str.replace(/\s/g, "_")].map((char, idx) => {
-        return <Letter key={idx} letter={char} />;
-      })}
+      {str
+        .replace(/\s/g, "_")
+        .split("")
+        .map((char, idx) => {
+          return <Letter key={idx} letter={char} />;
+        })}
     </div>
   );
 }
 
-function Button({ text, onClick, className }) {
+function Button({
+  text,
+  onClick,
+  className,
+}: {
+  text: string;
+  onClick: React.MouseEventHandler;
+  className?: string;
+}) {
   return (
     <button
       className={`h-min bg-blue-500 rounded text-white px-2 py-1 ${className}`}
@@ -58,12 +70,12 @@ function Button({ text, onClick, className }) {
 
 function Interactive({
   sentence,
-  keysDisabled,
-  isReversed,
+  keysDisabled = false,
+  isReversed = false,
 }: {
   sentence: string;
-  keysDisabled: boolean;
-  isReversed: boolean;
+  keysDisabled?: boolean;
+  isReversed?: boolean;
 }) {
   const [shift, setShift] = useState(0);
 
@@ -80,7 +92,7 @@ function Interactive({
   const shiftRef = useRef(0);
 
   useEffect(() => {
-    const handleKeyDown = (event) => {
+    const handleKeyDown = (event: KeyboardEvent) => {
       if (keysDisabled) return;
 
       if (event.key === "ArrowLeft") {
@@ -128,10 +140,16 @@ function Interactive({
   );
 }
 
-function SeeAll({ sentence, isReversed }) {
+function SeeAll({
+  sentence,
+  isReversed,
+}: {
+  sentence: string;
+  isReversed?: boolean;
+}) {
   return (
     <>
-      {[..."ABCDEFGHIJKLMNOPQRSTUVWXYZ"].map((shifted, idx) => {
+      {"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map((shifted, idx) => {
         return (
           <div className="flex flex-row">
             <>
