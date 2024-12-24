@@ -1,0 +1,2 @@
+@tailwind base;@tailwind components;@tailwind utilities;body,html{@apply bg-white dark:bg-gray-950;@media (prefers-color-scheme:dark){color-scheme:dark}}.App{font-family:sans-serif;text-align:center}
+/*# sourceMappingURL=main.902c6a95.css.map*/
