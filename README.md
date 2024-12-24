@@ -11,7 +11,7 @@ A Caesar shift, named after Julius Caesar who used it to encode military message
 
 ## 🔄 Try it out!
 
-- **Live demo**: https://vrhj4f.csb.app/
+- **Live demo**: https://nicolekc.github.io/caesar-shift/
 - **Code sandbox**: https://codesandbox.io/p/sandbox/caeser-shift-vrhj4f
 
 ---
