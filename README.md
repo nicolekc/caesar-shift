@@ -11,19 +11,15 @@ A Caesar shift, named after Julius Caesar who used it to encode military message
 
 ## 🔄 Try it out!
 
-- **Live App**: [APP_URL](#)
-- **Code Sandbox**: [CODE_SANDBOX_URL](#)
+- **Live demo**: https://vrhj4f.csb.app/
+- **Code sandbox**: https://codesandbox.io/p/sandbox/caeser-shift-vrhj4f
 
 ---
 
 ## 🌐 Features
 
-- 🔢 **Interactive**: Type a sentence and watch it shift!
+- 🔢 **Interactive**: Type a sentence, watch it shift
 - 🔄 **Dynamic Shift**: Use ⬅️ and ➡️ to change the shift number
-- 🎨 **Visual Demo**: Screenshots of the app in action below!
-
-![App image 1](/docs/figure1.png)
-![App image 2](/docs/figure3.png)
 
 ---
 
@@ -47,5 +43,10 @@ A Caesar shift, named after Julius Caesar who used it to encode military message
 ---
 
 ## 📸 Screenshots
-(Insert screenshots here!)
+
+Simple shift:
+![Basic shift](/docs/figure1.png)
+
+See all:
+![See all shifts for standard letters](/docs/figure3.png)
 
