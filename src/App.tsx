@@ -28,7 +28,7 @@ function shiftSentence(sentence: string, shift = 0, isReversed = false) {
 
 function Letter({ letter }: { letter: string }) {
   return (
-    <div className="font-mono px-1 bg-white inline-block h-min">
+    <div className="font-mono px-1 bg-white dark:bg-gray-900 inline-block h-min">
       {letter.toUpperCase()}
     </div>
   );
@@ -37,7 +37,7 @@ function Letter({ letter }: { letter: string }) {
 function LetterRow({ str, className }: { str: string; className?: string }) {
   return (
     <div
-      className={`mb-2 flex flex-row w-fit bg-gray-200 gap-0.5 p-0.5 h-min ${className}`}
+      className={`mb-2 flex flex-row w-fit bg-gray-200 dark:bg-gray-600 gap-0.5 p-0.5 h-min ${className}`}
     >
       {str
         .replace(/\s/g, "_")
@@ -60,7 +60,7 @@ function Button({
 }) {
   return (
     <button
-      className={`h-min bg-blue-500 rounded text-white px-2 py-1 ${className}`}
+      className={`h-min bg-blue-500 dark:bg-blue-600 rounded text-white px-2 py-1 ${className}`}
       onClick={onClick}
     >
       {text}
@@ -119,7 +119,7 @@ function Interactive({
         <LetterRow str="a" />
         <div className="px-2 py-1">=</div>
         <LetterRow
-          className={shifted !== "A" ? "[&&]:bg-blue-500" : ""}
+          className={shifted !== "A" ? "[&&]:bg-blue-500 [&&]:dark:bg-blue-600" : ""}
           str={shifted}
         />
         <div className="ml-4 mb-4">
@@ -132,7 +132,7 @@ function Interactive({
       <LetterRow str={sentence} />
       {(shift !== 0 || isReversed) && (
         <LetterRow
-          className="[&&]:bg-blue-200"
+          className="[&&]:bg-blue-200 [&&]:dark:bg-blue-800"
           str={shiftSentence(sentence, shift, isReversed)}
         />
       )}
@@ -184,6 +184,7 @@ export default function App() {
               p-2
               border 
               border-gray-300 
+              dark:border-gray-600
               rounded-lg
               focus:border-blue-500
               font-mono"
