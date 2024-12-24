@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/caesar-shift/static/css/main.902c6a95.css",
-    "main.js": "/caesar-shift/static/js/main.3504493c.js",
+    "main.js": "/caesar-shift/static/js/main.de8bf996.js",
     "index.html": "/caesar-shift/index.html",
     "main.902c6a95.css.map": "/caesar-shift/static/css/main.902c6a95.css.map",
-    "main.3504493c.js.map": "/caesar-shift/static/js/main.3504493c.js.map"
+    "main.de8bf996.js.map": "/caesar-shift/static/js/main.de8bf996.js.map"
   },
   "entrypoints": [
     "static/css/main.902c6a95.css",
-    "static/js/main.3504493c.js"
+    "static/js/main.de8bf996.js"
   ]
 }
