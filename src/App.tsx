@@ -122,12 +122,9 @@ function Interactive({
           className={shifted !== "A" ? "[&&]:bg-blue-500 [&&]:dark:bg-blue-600" : ""}
           str={shifted}
         />
-        <div className="ml-4 mb-4">
-          <Button text="-" onClick={left} />
-          &nbsp;
-          <Button text="+" onClick={right} />
-          &nbsp;
-        </div>
+        <Button className="ml-4" text="-" onClick={left} />
+        <div className="px-2 py-1 text-gray-400 font-mono">{shift == 0 ? "__" : shift > 0 ? "+" + shift : shift}</div>
+        <Button className="" text="+" onClick={right} />
       </div>
       <LetterRow str={sentence} />
       {(shift !== 0 || isReversed) && (
@@ -149,11 +146,16 @@ function SeeAll({
 }) {
   return (
     <>
+      <div className="flex flex-row">
+        <LetterRow str="A" />
+        <div className="px-2 py-1">=</div>
+      </div>
       {"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map((shifted, idx) => {
         return (
           <div className="flex flex-row">
             <>
               <LetterRow str={shifted} />
+              <div className="px-1 py-1 text-gray-400 font-mono">/+{idx}</div>
               <div className="px-2 py-1">=</div>
               <LetterRow str={shiftSentence(sentence, idx, isReversed)} />
             </>
